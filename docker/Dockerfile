@@ -6,9 +6,9 @@ RUN mkdir /var/run/sshd
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin no/' /etc/ssh/sshd_config
 
 # Build args
-ARG SSH_USER
-ARG SSH_PASSWORD
-ARG SSH_VOLUME_DIR
+ARG SSH_USER=user
+ARG SSH_PASSWORD=user
+ARG SSH_VOLUME_DIR=data
 
 # Add user
 RUN echo "${SSH_USER}:${SSH_PASSWORD}:1001:1001::/home/${SSH_USER}:/bin/bash" | newusers
