@@ -11,7 +11,7 @@ ARG SSH_PASSWORD
 ARG SSH_VOLUME_DIR
 
 # Add user
-RUN echo "${SSH_USER}:${SSH_PASSWORD}::::/home/${SSH_USER}:/bin/bash" | newusers
+RUN echo "${SSH_USER}:${SSH_PASSWORD}:1001:1001::/home/${SSH_USER}:/bin/bash" | newusers
 RUN cp /etc/skel/.profile /home/${SSH_USER}
 RUN cp /etc/skel/.bashrc /home/${SSH_USER}
 
